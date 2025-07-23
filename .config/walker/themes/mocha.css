@@ -1,0 +1,174 @@
+/* Define Theme Colors */
+@define-color foreground rgba(255, 255, 255, 0.8);
+@define-color background rgba(207, 131, 152, 1);
+@define-color background-end rgba(189, 90, 126, 0.9);
+@define-color color1 rgba(77, 55, 95, 1);
+
+
+/* Reset all styles */
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#prompt,
+#clear,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+  all: unset;
+}
+
+/* Error Window */
+#cfgerr {
+  background: rgba(255, 0, 0, 0.4);
+  margin-top: 20px;
+  padding: 8px;
+  font-size: 1.2em;
+}
+
+/* Main Window */
+#window {
+  color: @foreground;
+}
+
+/* Container */
+#box {
+  padding: 32px;
+  border: 2px solid @color1;
+  border-radius: 12px;
+  background: linear-gradient(
+    to bottom,
+    @background,
+    @background-end
+  );
+  box-shadow:
+    0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+/* Input Field Container */
+#search {
+  padding: 8px;
+  background: @color1;
+  border-radius: 12px;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.22);
+}
+
+/* Input Field Icons and Buttons */
+#prompt {
+  margin: 0 12px 0 4px;
+  color: @foreground;
+  opacity: 1;
+}
+
+#clear {
+  color: @foreground;
+  opacity: 0.8;
+}
+
+/* Input Fields */
+#password,
+#input,
+#typeahead {
+  background: @color1;
+  border-radius: 12px;
+  padding: 6px 10px;
+  color: @foreground;
+}
+
+/* Placeholder */
+#input placeholder {
+  opacity: 0.5;
+}
+
+/* Suggestions */
+#typeahead {
+  opacity: 0.8;
+}
+
+/* Spinner */
+#spinner {
+  padding: 8px;
+}
+
+/* Scrollable List */
+#list {
+}
+
+/* Item Container */
+child {
+  padding: 8px;
+  border-radius: 12px;
+}
+
+child:hover,
+child:selected {
+  background: alpha(@color1, 0.4);
+}
+
+/* Item Components */
+#item {
+}
+
+#icon {
+  margin-right: 8px;
+}
+
+#text {
+}
+
+#label {
+  font-weight: 500;
+}
+
+#sub {
+  font-size: 0.8em;
+  opacity: 0.5;
+}
+
+#activationlabel {
+}
+
+#bar {
+}
+
+.barentry {
+}
+
+/* Activation Style */
+.activation #activationlabel,
+.activation #text,
+.activation #icon,
+.activation #search {
+  opacity: 0.5;
+}
+
+/* AI Items */
+.aiItem {
+  padding: 10px;
+  border-radius: 6px;
+  color: @foreground;
+  background: @background;
+}
+
+.aiItem.user {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.aiItem.assistant {
+  background: lighten(@background, 10%);
+}
